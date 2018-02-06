@@ -1,0 +1,53 @@
+<!--
+curl --header "content-type: text/xml" -d @request.xml http://localhost:9001/ws
+-->
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://pjayes.com/todo">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:GetTodoRequest />
+    </soapenv:Body>
+</soapenv:Envelope>
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://pjayes.com/todo">
+<soapenv:Header/>
+<soapenv:Body>
+    <gs:AddTodoRequest>
+        <gs:Todo>
+            <title>Buy milk</title>
+            <description>Go to supermarket and buy some milk</description>
+        </gs:Todo>
+    </gs:AddTodoRequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://pjayes.com/todo">
+<soapenv:Header/>
+<soapenv:Body>
+    <gs:DeleteTodoRequest>
+        <gs:uid>7e0e4778-11a8-4256-8884-99d884a4c132</gs:uid>
+    </gs:DeleteTodoRequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://pjayes.com/todo">
+<soapenv:Header/>
+<soapenv:Body>
+    <gs:MarkAsCompletedRequest>
+        <gs:uid>c89da85e-f8dc-4a6d-ad2d-8592dcbc6736</gs:uid>
+    </gs:MarkAsCompletedRequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+
+
+
+
+

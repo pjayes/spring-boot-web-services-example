@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://pjayes.com/todo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="GetTodoResponse" xmlns:todo="http://pjayes.com/todo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="todo:TodoType" name="Todo" maxOccurs="unbounded" minOccurs="0" xmlns:todo="http://pjayes.com/todo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetTodoRequest" xmlns:todo="http://pjayes.com/todo">
+        <xs:complexType></xs:complexType>
+    </xs:element>
+
+    <xs:element name="AddTodoRequest" xmlns:todo="http://pjayes.com/todo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="todo:TodoType" name="Todo" xmlns:todo="http://pjayes.com/todo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteTodoRequest" xmlns:todo="http://pjayes.com/todo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="uid"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="MarkAsCompletedRequest" xmlns:todo="http://pjayes.com/todo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="uid"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="TodoType">
+        <xs:all>
+            <xs:element type="xs:string" name="title"/>
+            <xs:element type="xs:string" name="description"/>
+            <xs:element type="xs:string" name="uid"/>
+            <xs:element type="xs:boolean" name="completed"/>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
